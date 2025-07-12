@@ -1,36 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 16:11:02 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/07/12 16:13:36 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/07/12 15:51:11 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/07/12 17:04:31 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-#include <stdio.h>
-*/
-#include "../includes/push_swap.h"
 
-int	ft_isdigit(int c)
+#include "includes/push_swap.h"
+#include <stdio.h>
+
+int	ft_parse_arguments(int argc, char **argv)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
-}
-/*
-int	main()
-{
-	char *tab = "42";
-	int	i = 0;
-	while (tab[i])
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < argc)
 	{
-		if (ft_isdigit(tab[i]) == 0)
-			return (0);
+		while (argv[i][j])
+		{
+			if (argv[i][j] < 48 || argv[i][j] > 57)
+				return (0);
+			j++;
+		}
+		j = 0;
 		i++;
 	}
-	return 1;
+	return (1);
 }
-*/
+
+void	ft_push_swap(int argc,char **argv)
+{
+	printf("%d",ft_parse_arguments(argc, argv));
+}
+
+
+int	main(int argc, char **argv)
+{
+	if (argc < 2)
+		return (0);
+	ft_push_swap(argc, argv);
+}
