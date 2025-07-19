@@ -6,13 +6,13 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:51:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/07/12 17:04:31 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:23:01 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 #include <stdio.h>
-
+/*
 int	ft_parse_arguments(int argc, char **argv)
 {
 	int	i;
@@ -33,16 +33,26 @@ int	ft_parse_arguments(int argc, char **argv)
 	}
 	return (1);
 }
-
+*/
 void	ft_push_swap(int argc,char **argv)
 {
-	printf("%d",ft_parse_arguments(argc, argv));
+	t_list	*pile;
+
+	pile = ft_lstnew(argv)
+	printf("%s\n",pile->content);
 }
 
 
 int	main(int argc, char **argv)
 {
+	int	i;
+
+	i = 0;
 	if (argc < 2)
 		return (0);
-	ft_push_swap(argc, argv);
+	while(i < argc)
+	{
+		ft_push_swap(argc, &argv[i]);
+		i++;
+	}
 }

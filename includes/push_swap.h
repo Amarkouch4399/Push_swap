@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:20:05 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/07/12 17:19:02 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:20:31 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef struct pile
+typedef struct s_stack
 	{
-		int	valeur;
-		struct pile *node;
-	} pile;
+		void	content;
+		struct s_stack *node;
+	} t_stack;
 
 int	main(int argc, char **argv);
 int	ft_isdigit(int c);
+t_list	*ft_lstnew(void *content);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 18:00:56 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/30 18:55:34 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:21:32 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
 t_list	*ft_lstnew(void *content)
 {
