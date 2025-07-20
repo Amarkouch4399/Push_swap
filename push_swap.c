@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:51:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/07/20 17:29:34 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/07/20 20:00:10 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,24 @@ int	ft_parse_arguments(int argc, char **argv)
 	return (1);
 }
 */
-void	ft_push_swap(int argc,char **argv)
+void	ft_push_swap(int argc, char **argv)
 {
-	t_list	*stack;
+	t_list	**stack;
+	int	i;
 
-	stack = ft_lstnew(ft_atoi(*argv));
-	if (stack)
-		ft_lstadd_front(ft_atoi(*argv));
-	printf("%d\n",stack->content);
+	i = 0;
+	while (i < argc)
+	{
+		stack[i] = ft_lstnew(ft_atoi(argv[i]));
+		printf("%d\n",stack[i]->content);
+		i++;
+	}
 }
 
 
 int	main(int argc, char **argv)
 {
-	int	i;
-
-	i = 0;
 	if (argc < 2)
 		return (0);
-	while(i < argc)
-	{
-		ft_push_swap(argc, &argv[i]);
-		i++;
-	}
+	ft_push_swap(argc, &*argv);
 }

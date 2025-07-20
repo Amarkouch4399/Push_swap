@@ -6,12 +6,17 @@
 #    By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 20:02:57 by ouamarko          #+#    #+#              #
-#    Updated: 2025/07/09 18:23:32 by ouamarko         ###   ########.fr        #
+#    Updated: 2025/07/20 18:49:21 by ouamarko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= push_swap
 
-SRC	=
+SRC	= push_swap.c \
+	  utils/ft_atoi.c \
+	  utils/ft_lstadd_front.c \
+	  utils/ft_lstnew.c \
+
+INCLUDES = includes/push_swap.h
 
 OBJS	= ${SRC:.c=.o}
 
