@@ -1,42 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 19:22:00 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/21 19:27:22 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/07/20 17:25:27 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/07/20 17:28:43 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-char	*ft_strdup(const char *src)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char	*copy;
-	int		i;
-
-	i = 0;
-	while (src[i])
-		i++;
-	copy = malloc(sizeof(char) * (i + 1));
-	if (!(copy))
-		return (NULL);
-	i = 0;
-	while (src[i])
-	{
-		copy[i] = src[i];
-		i++;
-	}
-	copy[i] = '\0';
-	return (copy);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main()
-{
-	printf("%s\n", ft_strdup("ouss"));
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:20:05 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/07/19 17:20:31 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/07/20 17:27:21 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef struct s_stack
+typedef struct s_list
 	{
-		void	content;
-		struct s_stack *node;
-	} t_stack;
+		int	content;
+		struct t_list *next;
+	} t_list;
 
+void	ft_push_swap(int argc, char **argv);
 int	main(int argc, char **argv);
 int	ft_isdigit(int c);
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int content);
+t_list	*ft_lstadd_front(t_list **lst, t_list *new);
+int	ft_atoi(char *nptr);
 
 #endif

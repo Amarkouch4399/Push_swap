@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 17:43:51 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/22 17:08:42 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/07/20 16:32:25 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/07/20 17:16:34 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+#include "../includes/push_swap.h"
+
+t_list	*ft_lstnew(int	content)
 {
-	size_t	i;
-	char	*tab;
+	t_list	*node;
 
-	i = 0;
-	tab = malloc((size * nmemb));
-	if (!tab)
+	node = malloc(sizeof(t_list));
+	if (!node)
 		return (NULL);
-	while (i < nmemb * size)
-	{
-		tab[i] = 0;
-		i++;
-	}
-	return (tab);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
+/*
+int	main()
+{
+	t_list *node = ft_lstnew("ouss");
+	printf("%s\n", (char *)node->content);
+}
+*/

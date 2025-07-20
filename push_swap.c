@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:51:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/07/19 17:23:01 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/07/20 17:29:34 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,12 @@ int	ft_parse_arguments(int argc, char **argv)
 */
 void	ft_push_swap(int argc,char **argv)
 {
-	t_list	*pile;
+	t_list	*stack;
 
-	pile = ft_lstnew(argv)
-	printf("%s\n",pile->content);
+	stack = ft_lstnew(ft_atoi(*argv));
+	if (stack)
+		ft_lstadd_front(ft_atoi(*argv));
+	printf("%d\n",stack->content);
 }
 
 

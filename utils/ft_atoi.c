@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 16:59:14 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/04/27 18:12:28 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/07/20 16:46:56 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/07/20 17:09:10 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
 static int	ft_overflow(int n)
 {
@@ -20,7 +20,7 @@ static int	ft_overflow(int n)
 		return (-1);
 }
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(char *nptr)
 {
 	int				i;
 	int				sign;
