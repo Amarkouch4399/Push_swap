@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/20 16:32:25 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/07/23 16:42:35 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/07/23 17:38:11 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/07/23 17:38:30 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_list	*ft_lstnew(int	content)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*node;
+	t_list	*last;
 
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	if (!lst || !new)
+		return;
+	if (!*lst)
+	{
+		*lst = new;
+		return;
+	}
+	last = *lst;
+	while (last->next)
+		last = last->next;
+	last->next = new;
 }
-/*
-int	main()
-{
-	t_list *node = ft_lstnew("ouss");
-	printf("%s\n", (char *)node->content);
-}
-*/
