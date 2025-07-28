@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_count_split.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 19:03:37 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/07/28 16:20:43 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/07/28 18:52:46 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/07/28 18:58:43 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_isdigit(char	s)
+int	ft_count_split(char **tab)
 {
-	int	i;
-
-	i = 0;
-	while (s)
-	{
-		if (s  < 48 || s > 57)
-			return (0);
+	int i = 0;
+	while (tab[i])
 		i++;
-	}
-	return (1);
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:20:05 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/07/23 19:41:53 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/07/28 20:04:27 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 typedef struct s_list
 	{
@@ -29,13 +30,16 @@ typedef struct s_info
 	} t_info;
 
 
-void	ft_push_swap(int argc, char **argv);
+void	ft_create_list(int argc, char **argv);
+void	ft_create_list_solo(int count, char **argv);
 int	main(int argc, char **argv);
-int	ft_isdigit(int c);
+int	ft_isdigit(char s);
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int	ft_atoi(char *nptr);
 char	**ft_split(char const *s, char c);
+int	ft_count_split(char **tab);
+int	ft_parse_solo_argument(char *tab);
 
 #endif
