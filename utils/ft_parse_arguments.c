@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 17:10:35 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/04 19:03:35 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/08/07 15:15:33 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_parse_arguments(char **tab)
 {
-    int i = 0;
+    int i = 1;
     int j;
 
     while (tab[i])

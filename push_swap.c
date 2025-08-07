@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:51:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/04 19:45:45 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/08/07 19:00:27 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,30 +69,27 @@ int	main(int argc, char **argv)
 {
 	char	**tab;
 
-	if (argc <= 2)
+	if (argc < 2)
 	{
 		write(1, "Error\n", 6);
 		return (0);
 	}
 	if (argc == 2)//si arguement solo ""
 	{
-		if (ft_parse_solo_argument(&*argv[1]) == 0)
+		if (ft_parse_solo_argument(&*argv[1]) == 1)
 		{
 			tab = ft_split(argv[1], ' ');
 			ft_create_list_solo(ft_count_split(tab), &*tab);
 		}
 		else
-		{
 			write(1, "Error\n", 6);
-			return (0);
-		}
 	}
 	if (argc >= 3)// si plsr arguments
 	{
 		if (ft_parse_arguments(&*argv) == 1)
 			ft_create_list(argc, &*argv);
 		else
-			return 0;
+			write(1,"Error\n", 6);
 	}
 	return (0);
 }
