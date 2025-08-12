@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:20:05 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/04 17:25:14 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:07:52 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ char	**ft_split(char const *s, char c);
 int	ft_count_split(char **tab);
 int	ft_parse_solo_argument(char *tab);
 int	ft_parse_arguments(char **tab);
+int	ft_verif_double(t_list *current, t_info *start);
+void	ft_free_tab(char **s);
 
 #endif

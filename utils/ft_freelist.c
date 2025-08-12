@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_freelist.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 19:03:37 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/11 16:03:29 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/08/11 15:32:22 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/08/11 15:42:38 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_isdigit(char	s)
+void	ft_freelist(t_list **lst)
 {
-	if ((s >= '0' && s <= '9') || (s == '-' || s == '+'))
-		return (1);
-	return (0);
+	if (lst->next)
+	{
+		while(lst->next)
+		{
+			free(lst->content);
+			lst = lst->next;
+		}
+	}
+	else
+		return (0);
+
+
 }

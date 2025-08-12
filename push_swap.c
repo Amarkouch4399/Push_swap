@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:51:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/07 19:00:27 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:07:16 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ void	ft_create_list(int argc, char **argv)
 			info->start = node;
 		else
 			ft_lstadd_back(&(node->next), node);
-		printf("%d\n", node->content);
+		//printf("%d\n", node->content);
 		i++;
+		if (ft_verif_double(node, info) == 1)
+			printf("%s", "Error\n");
 	}
 	if (i == argc)
 		info->end = node;
@@ -53,11 +55,12 @@ void	ft_create_list_solo(int count, char **argv)
 			info->start = node;
 		else
 			ft_lstadd_back(&(node->next), node);
-		printf("%d\n", node->content);
+		//printf("%d\n", node->content);
 		i++;
 		if (i == count)
 			info->end = node;
-		i++;
+		if (ft_verif_double(node, info) == 1)
+			printf("%s", "Error\n");
 	}
 	node = info->start;
 	printf("val debut = %d\n", node->content);
@@ -71,7 +74,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		write(1, "Error\n", 6);
+		printf("%s", "Error\n");
 		return (0);
 	}
 	if (argc == 2)//si arguement solo ""
@@ -82,14 +85,14 @@ int	main(int argc, char **argv)
 			ft_create_list_solo(ft_count_split(tab), &*tab);
 		}
 		else
-			write(1, "Error\n", 6);
+			printf("%s", "Error\n");
 	}
 	if (argc >= 3)// si plsr arguments
 	{
 		if (ft_parse_arguments(&*argv) == 1)
 			ft_create_list(argc, &*argv);
 		else
-			write(1,"Error\n", 6);
+			printf("%s","Error\n");
 	}
 	return (0);
 }
