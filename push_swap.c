@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:51:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/12 16:07:16 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/08/13 20:33:35 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,31 @@ void	ft_create_list(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
+		if (ft_verif_double(node, info) == 1)
+		{
+			printf("%s", "Error\n");
+			return ;
+		}
 		node = ft_lstnew(ft_atoi(argv[i]));
+		/*if (node->content > 2147483647 || node->content < -2147483648)
+		{
+			printf("%s", "Error\n");
+			return ;
+		}
+		*/
 		if (!info->start)
 			info->start = node;
 		else
 			ft_lstadd_back(&(node->next), node);
 		//printf("%d\n", node->content);
 		i++;
-		if (ft_verif_double(node, info) == 1)
-			printf("%s", "Error\n");
 	}
 	if (i == argc)
 		info->end = node;
 	node = info->start;
-	printf("val debut = %d\n", node->content);
+	printf("val debut = %ld\n", node->content);
 	node = info->end;
-	printf("val fin = %d\n", node->content);
+	printf("val fin = %ld\n", node->content);
 }
 
 void	ft_create_list_solo(int count, char **argv)
@@ -50,7 +59,19 @@ void	ft_create_list_solo(int count, char **argv)
 	i = 0;
 	while (i < count)
 	{
+		if (ft_verif_double(node, info) == 1)
+		{
+			printf("%s", "Error\n");
+			return ;
+		}
 		node = ft_lstnew(ft_atoi(argv[i]));
+		/*
+		if ((node->content > 2147483647 || node->content < -2147483648))
+		{
+			printf("%s", "Error\n");
+			return ;
+		}
+		*/
 		if (!info->start)
 			info->start = node;
 		else
@@ -59,13 +80,11 @@ void	ft_create_list_solo(int count, char **argv)
 		i++;
 		if (i == count)
 			info->end = node;
-		if (ft_verif_double(node, info) == 1)
-			printf("%s", "Error\n");
 	}
 	node = info->start;
-	printf("val debut = %d\n", node->content);
+	printf("val debut = %ld\n", node->content);
 	node = info->end;
-	printf("val fin = %d\n", node->content);
+	printf("val fin = %ld\n", node->content);
 }
 
 int	main(int argc, char **argv)
@@ -77,7 +96,7 @@ int	main(int argc, char **argv)
 		printf("%s", "Error\n");
 		return (0);
 	}
-	if (argc == 2)//si arguement solo ""
+	if (argc == 2)
 	{
 		if (ft_parse_solo_argument(&*argv[1]) == 1)
 		{
@@ -87,7 +106,7 @@ int	main(int argc, char **argv)
 		else
 			printf("%s", "Error\n");
 	}
-	if (argc >= 3)// si plsr arguments
+	if (argc >= 3)
 	{
 		if (ft_parse_arguments(&*argv) == 1)
 			ft_create_list(argc, &*argv);

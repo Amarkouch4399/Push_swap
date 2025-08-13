@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 15:43:06 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/12 14:38:36 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/08/13 18:44:56 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_verif_double(t_list *current, t_info *start)
 		return (0);
 	while (tmp)
 	{
-		if (tmp != current && (current->content == start->start->content))
+		if (tmp != current && (current->content == tmp->content))
 			return (1);
 		tmp = tmp->next;
 	}

@@ -6,7 +6,7 @@
 #    By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 20:02:57 by ouamarko          #+#    #+#              #
-#    Updated: 2025/08/11 16:13:18 by ouamarko         ###   ########.fr        #
+#    Updated: 2025/08/13 18:52:59 by ouamarko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= push_swap
@@ -46,7 +46,7 @@ clean:
 	rm -f ${OBJS}
 
 fclean: clean
-	rm -f ${NAME}
+	rm -f ${NAME} ${OBJS}
 
 re: fclean all
 

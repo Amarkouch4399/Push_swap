@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 16:46:56 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/12 15:52:46 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/08/13 19:40:04 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ static int	ft_overflow(int n)
 		return (-1);
 }
 
-int	ft_atoi(char *nptr)
+long	ft_atoi(char *nptr)
 {
 	int				i;
 	int				sign;
-	unsigned long	nb;
+	long		nb;
 
 	i = 0;
 	nb = 0;
