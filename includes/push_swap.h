@@ -42,7 +42,7 @@ char	**ft_split(char const *s, char c);
 int	ft_count_split(char **tab);
 int	ft_parse_solo_argument(char *tab);
 int	ft_parse_arguments(char **tab);
-int	ft_verif_double(t_list *current, t_info *start);
+int	ft_verif_double(t_list *current, int val);
 void	ft_free_tab(char **s);
 
 #endif

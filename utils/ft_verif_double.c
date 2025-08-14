@@ -12,16 +12,16 @@
 
 #include "../includes/push_swap.h"
 
-int	ft_verif_double(t_list *current, t_info *start)
+int	ft_verif_double(t_list *current, int val)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
-	tmp = start->start;
+	tmp = current;
 	if(!current)
 		return (0);
 	while (tmp)
 	{
-		if (tmp != current && (current->content == tmp->content))
+		if (current->content == val)
 			return (1);
 		tmp = tmp->next;
 	}

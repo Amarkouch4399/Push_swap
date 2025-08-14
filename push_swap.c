@@ -17,28 +17,24 @@ void	ft_create_list(int argc, char **argv)
 	t_list	*node;
 	t_info	*info;
 	int	i;
+	int	val;
 
 	info = malloc(sizeof(t_info));
 	i = 1;
 	while (i < argc)
 	{
-		if (ft_verif_double(node, info) == 1)
+		val = ft_atoi(argv[i]);
+		if (ft_verif_double(node, val))
 		{
 			printf("%s", "Error\n");
 			return ;
 		}
-		node = ft_lstnew(ft_atoi(argv[i]));
-		/*if (node->content > 2147483647 || node->content < -2147483648)
-		{
-			printf("%s", "Error\n");
-			return ;
-		}
-		*/
+		node = ft_lstnew(val);
 		if (!info->start)
 			info->start = node;
 		else
-			ft_lstadd_back(&(node->next), node);
-		//printf("%d\n", node->content);
+			ft_lstadd_back(&(info->start), node);
+		printf("%ld\n", node->content);
 		i++;
 	}
 	if (i == argc)
@@ -54,29 +50,24 @@ void	ft_create_list_solo(int count, char **argv)
 	t_list	*node;
 	t_info	*info;
 	int	i;
+	int	val;
 
 	info = malloc(sizeof(t_info));
 	i = 0;
 	while (i < count)
 	{
-		if (ft_verif_double(node, info) == 1)
+		val = ft_atoi(argv[i]);
+		if (ft_verif_double(node, val) == 1)
 		{
 			printf("%s", "Error\n");
 			return ;
 		}
-		node = ft_lstnew(ft_atoi(argv[i]));
-		/*
-		if ((node->content > 2147483647 || node->content < -2147483648))
-		{
-			printf("%s", "Error\n");
-			return ;
-		}
-		*/
+		node = ft_lstnew(val);
 		if (!info->start)
 			info->start = node;
 		else
-			ft_lstadd_back(&(node->next), node);
-		//printf("%d\n", node->content);
+			ft_lstadd_back(&(info->start), node);
+		printf("%ld\n", node->content);
 		i++;
 		if (i == count)
 			info->end = node;
