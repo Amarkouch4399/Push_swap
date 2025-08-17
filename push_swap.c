@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:51:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/13 20:33:35 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/08/17 18:28:35 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_create_list(int argc, char **argv)
 	while (i < argc)
 	{
 		val = ft_atoi(argv[i]);
-		if (ft_verif_double(node, val))
+		if (ft_verif_double(info->start, val))
 		{
 			printf("%s", "Error\n");
 			return ;
@@ -57,7 +57,7 @@ void	ft_create_list_solo(int count, char **argv)
 	while (i < count)
 	{
 		val = ft_atoi(argv[i]);
-		if (ft_verif_double(node, val) == 1)
+		if (ft_verif_double(info->start, val) == 1)
 		{
 			printf("%s", "Error\n");
 			return ;
