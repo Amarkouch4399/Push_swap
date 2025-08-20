@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:20:05 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/20 10:39:54 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/08/20 19:19:41 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 long	ft_atoi(char *nptr);
 char	**ft_split(char const *s, char c);
 int	ft_count_split(char **tab);
-int	ft_parse_solo_argument(char *tab);
 int	ft_parse_arguments(char **tab);
 int	ft_verif_double(t_list *current, int val);
 void	ft_free_tab(char **s);
 void	ft_free_list(t_list **head);
 char	**ft_copy_argv(int argc, char **argv);
 char	*ft_strdup(const char *src);
+void	more_arguments(int argc, char **argv);
+void	one_arguments(char **argv);
 
 #endif

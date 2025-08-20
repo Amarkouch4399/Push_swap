@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_arguments.c                               :+:      :+:    :+:   */
+/*   ft_swap_a.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 17:10:35 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/20 19:23:23 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/08/20 17:53:54 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/08/20 17:59:39 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-
-int	ft_parse_arguments(char **tab)
+void ft_swap_a(t_list **stack_a, t_list **stack_b)
 {
-    int i = 1;
-    int j;
 
-    while (tab[i])
-    {
-        j = 0;
-        while (tab[i][j])
-        {
-            if (ft_isdigit(tab[i][j]) == 0 && tab[i][j] != ' ')
-                return (0);
-            j++;
-        }
-        i++;
-    }
-    return (1);
 }
