@@ -6,7 +6,7 @@
 #    By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 20:02:57 by ouamarko          #+#    #+#              #
-#    Updated: 2025/08/13 18:52:59 by ouamarko         ###   ########.fr        #
+#    Updated: 2025/08/20 10:57:49 by ouamarko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= push_swap
@@ -22,6 +22,10 @@ SRC	= push_swap.c \
 	  utils/ft_split.c \
 	  utils/ft_isdigit.c \
 	  utils/ft_verif_double.c \
+	  utils/ft_copy_argv.c \
+	  utils/ft_strdup.c \
+	  utils/ft_free_tab.c \
+	  utils/ft_free_list.c \
 
 
 INCLUDES = includes/push_swap.h
