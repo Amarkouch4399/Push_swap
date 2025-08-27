@@ -10,7 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_swap_a(t_list **stack_a, t_list **stack_b)
-{
+#include "../includes/push_swap.h"
 
+void ft_swap_a(t_list **stack_a)
+{    
+    t_list	*first;
+    t_list	*second;
+    long	tmp;
+
+    if (!stack_a || !*stack_a || !(*stack_a)->next)
+        return ;
+    first = *stack_a;
+    second = first->next;
+    tmp = first->content;
+    first->content = second->content;
+    second->content = tmp;
+    printf("sa\n");
 }

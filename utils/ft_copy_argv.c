@@ -24,6 +24,13 @@ char **ft_copy_argv(int argc, char **argv)
     while (i < argc)
     {
         tab[i] = ft_strdup(argv[i]);
+        if (!tab[i])
+        {
+            while (i-- > 0)
+                free(tab[i]);
+            free(tab);
+            return (NULL);
+        }
         i++;
     }
     tab[i] = NULL;

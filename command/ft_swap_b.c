@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_solo_argument.c                           :+:      :+:    :+:   */
+/*   ft_swap_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/28 18:46:06 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/07 18:49:50 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/08/27 10:00:00 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/08/27 10:00:00 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_parse_solo_argument(char *tab)
-{
-	int	i;
+void ft_swap_b(t_list **stack_b)
+{    
+    t_list	*first;
+    t_list	*second;
+    long	tmp;
 
-	i = 0;
-	while (tab[i])
-	{
-		if ((ft_isdigit(tab[i]) == 1 || tab[i] == 32))
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+    if (!stack_b || !*stack_b || !(*stack_b)->next)
+        return ;
+    first = *stack_b;
+    second = first->next;
+    tmp = first->content;
+    first->content = second->content;
+    second->content = tmp;
 }
-

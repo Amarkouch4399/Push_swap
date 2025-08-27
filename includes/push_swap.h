@@ -48,5 +48,7 @@ char	**ft_copy_argv(int argc, char **argv);
 char	*ft_strdup(const char *src);
 void	more_arguments(int argc, char **argv);
 void	one_arguments(char **argv);
+void	ft_swap_a(t_list **stack_a);
+void	ft_swap_b(t_list **stack_b);
 
 #endif

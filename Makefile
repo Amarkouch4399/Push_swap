@@ -18,7 +18,6 @@ SRC	= push_swap.c \
 	  utils/ft_count_split.c \
 	  utils/ft_lstadd_back.c \
 	  utils/ft_parse_arguments.c \
-	  utils/ft_parse_solo_argument.c \
 	  utils/ft_split.c \
 	  utils/ft_isdigit.c \
 	  utils/ft_verif_double.c \
@@ -26,6 +25,9 @@ SRC	= push_swap.c \
 	  utils/ft_strdup.c \
 	  utils/ft_free_tab.c \
 	  utils/ft_free_list.c \
+	  command/ft_swap_a.c \
+	  command/ft_swap_b.c \
+	  command/ft_swap_ss.c \
 
 
 INCLUDES = includes/push_swap.h

@@ -14,78 +14,87 @@
 
 void	ft_create_list(int argc, char **argv)
 {
-	t_list	*node;
-	t_info	*info;
-	int	i;
-	long	val;
+    t_list	*node;
+    t_info	*info;
+    int		i;
+    long	val;
 
-	info = malloc(sizeof(t_info));
-	i = 0;
-	while (i < argc)
-	{
-		val = ft_atoi(argv[i]);
-		if (val > INT_MAX || val < INT_MIN)
-		{
-			printf("%s", "Error");
-			return ;
-		}
-		if (ft_verif_double(info->start, val))
-		{
-			printf("%s", "Error\n");
-			ft_free_list(&(info->start));
-			free(info);
-			return ;
-		}
-		node = ft_lstnew(val);
-		if (!info->start)
-			info->start = node;
-		else
-			ft_lstadd_back(&(info->start), node);
-		printf("%ld\n", node->content);
-		i++;
-	}
-	if (i == argc)
-		info->end = node;
-	/*node = info->start;
-	  printf("val debut = %ld\n", node->content);
-	  node = info->end;
-	  printf("val fin = %ld\n", node->content);*/
+    info = malloc(sizeof(t_info));
+    if (!info)
+        return ;
+    i = 0;
+    info->start = NULL;
+    while (i < argc)
+    {
+        val = ft_atoi(argv[i]);
+        if (val > INT_MAX || val < INT_MIN)
+        {
+            printf("%s", "Error");
+            ft_free_list(&(info->start));
+            free(info);
+            return ;
+        }
+        if (ft_verif_double(info->start, val))
+        {
+            printf("%s", "Error\n");
+            ft_free_list(&(info->start));
+            free(info);
+            return ;
+        }
+        node = ft_lstnew(val);
+        if (!info->start)
+            info->start = node;
+        else
+            ft_lstadd_back(&(info->start), node);
+        printf("%ld\n", node->content);
+        i++;
+    }
+    if (i == argc)
+        info->end = node;
+    ft_free_list(&(info->start));
+    free(info);
 }
 
 void	more_arguments(int argc, char **argv)
 {
-	char	**tab;
+    char	**tab;
 
-	if (ft_parse_arguments(argv) == 1)
+    tab = NULL;
+    if (ft_parse_arguments(argv) == 1)
+    {
+        tab = ft_copy_argv(argc - 1, &argv[1]);
+        ft_create_list(argc - 1, tab);
+        ft_free_tab(tab);
+    }
+    else
 	{
-		tab = ft_copy_argv(argc - 1, &argv[1]);
-		ft_create_list(argc - 1, tab);
-		ft_free_tab(tab);
+        printf("%s","Error\n");
+        ft_free_tab(tab);
 	}
-	else
-		printf("%s","Error\n");
 }
 
 void	one_argument(char **argv)
 {
-	char	**tab;
+    char	**tab;
 
-	if (ft_parse_arguments(argv) == 1)
-	{
-		tab = ft_split(argv[1], ' ');
-		ft_create_list(ft_count_split(tab), tab);
-	}
-	else
-		printf("%s", "Error\n");
+    tab = NULL;
+    if (ft_parse_arguments(argv) == 1)
+    {
+        tab = ft_split(argv[1], ' ');
+        ft_create_list(ft_count_split(tab), tab);
+        ft_free_tab(tab);
+    }
+    else
+        printf("%s", "Error\n");
 }
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
-		one_argument(argv);
-	else if (argc > 2)
-		more_arguments(argc, argv);
-	else
-		printf("%s", "Error\n");
-	return (0);
+    if (argc == 2)
+        one_argument(argv);
+    else if (argc > 2)
+        more_arguments(argc, argv);
+    else
+        printf("%s", "Error\n");
+    return (0);
 }

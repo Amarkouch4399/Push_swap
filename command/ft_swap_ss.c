@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_verif_double.c                                  :+:      :+:    :+:   */
+/*   ft_swap_ss.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 15:43:06 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/17 18:27:24 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/08/27 10:00:00 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/08/27 10:00:00 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_verif_double(t_list *current, int val)
+void ft_swap_ss(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*tmp;
-
-	tmp = current;
-
-	if (!current)
-		return (0);
-	while (tmp)
-	{
-		if (tmp->content == val)
-			return (1);
-		tmp = tmp->next;
-	}
-	return (0);
+    ft_swap_a(stack_a);
+    ft_swap_b(stack_b);
+    printf("ss\n");
 }
