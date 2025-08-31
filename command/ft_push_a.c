@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_push_a.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 09:50:17 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/20 09:50:49 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/08/27 10:10:00 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/08/27 10:10:00 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void ft_free_list(t_list **head)
+void ft_push_a(t_list **stack_a, t_list **stack_b)
 {
-    t_list	*tmp;
+    t_list *tmp;
 
-    while (*head)
-    {
-        tmp = (*head)->next;
-        free(*head);
-        *head = tmp;
-    }
+    if (!stack_b || !*stack_b)
+        return;
+    tmp = *stack_b;
+    *stack_b = (*stack_b)->next;
+    tmp->next = *stack_a;
+    *stack_a = tmp;
+    printf("pa\n");
 }

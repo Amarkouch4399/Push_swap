@@ -14,9 +14,15 @@
 
 void	ft_free_tab(char **s)
 {
-	if (s && *s)
-	{
-		free(*s);
-		*s = NULL;
-	}
+    int	i;
+
+    if (!s)
+        return;
+    i = 0;
+    while (s[i])
+    {
+        free(s[i]);
+        i++;
+    }
+    free(s);
 }

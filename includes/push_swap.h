@@ -31,7 +31,7 @@ typedef struct s_info
 	} t_info;
 
 
-void	ft_create_list(int argc, char **argv);
+t_list	*ft_create_list(int argc, char **argv);
 int	main(int argc, char **argv);
 int	ft_isdigit(char s);
 t_list	*ft_lstnew(int content);
@@ -50,5 +50,7 @@ void	more_arguments(int argc, char **argv);
 void	one_arguments(char **argv);
 void	ft_swap_a(t_list **stack_a);
 void	ft_swap_b(t_list **stack_b);
+void	ft_swap_ss(t_list **stack_a,t_list **stack_b);
+void	ft_push_a(t_list **stack_a, t_list **stack_b);
 
 #endif

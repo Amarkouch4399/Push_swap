@@ -12,59 +12,64 @@
 
 #include "includes/push_swap.h"
 
-void	ft_create_list(int argc, char **argv)
+t_list  *ft_create_list(int argc, char **argv)
 {
     t_list	*node;
-    t_info	*info;
+    t_list	*start;
     int		i;
     long	val;
 
-    info = malloc(sizeof(t_info));
-    if (!info)
-        return ;
     i = 0;
-    info->start = NULL;
+    start = NULL;
     while (i < argc)
     {
         val = ft_atoi(argv[i]);
         if (val > INT_MAX || val < INT_MIN)
         {
             printf("%s", "Error");
-            ft_free_list(&(info->start));
-            free(info);
-            return ;
+            ft_free_list(&(start));
+            return NULL;
         }
-        if (ft_verif_double(info->start, val))
+        if (ft_verif_double(start, val))
         {
             printf("%s", "Error\n");
-            ft_free_list(&(info->start));
-            free(info);
-            return ;
+            ft_free_list(&(start));
+            return 0;
         }
         node = ft_lstnew(val);
-        if (!info->start)
-            info->start = node;
+        if (!node)
+        {
+            ft_free_list(&start);
+            return NULL;
+        }
+        if (!start)
+            start = node;
         else
-            ft_lstadd_back(&(info->start), node);
+            ft_lstadd_back(&start, node);
         printf("%ld\n", node->content);
         i++;
     }
-    if (i == argc)
-        info->end = node;
-    ft_free_list(&(info->start));
-    free(info);
+    return (start);
 }
 
 void	more_arguments(int argc, char **argv)
 {
     char	**tab;
+    t_list    *stack_a;
 
     tab = NULL;
+    stack_a = NULL;
     if (ft_parse_arguments(argv) == 1)
     {
         tab = ft_copy_argv(argc - 1, &argv[1]);
-        ft_create_list(argc - 1, tab);
+        if (!tab)
+        {
+            printf("Error\n");
+            return;
+        }
+        stack_a = ft_create_list(argc - 1, tab);
         ft_free_tab(tab);
+        ft_free_list(&stack_a);;
     }
     else
 	{
@@ -76,13 +81,17 @@ void	more_arguments(int argc, char **argv)
 void	one_argument(char **argv)
 {
     char	**tab;
+    t_list	*stack_a;
 
     tab = NULL;
+    stack_a = NULL;
     if (ft_parse_arguments(argv) == 1)
     {
         tab = ft_split(argv[1], ' ');
-        ft_create_list(ft_count_split(tab), tab);
+        stack_a = ft_create_list(ft_count_split(tab), tab);
         ft_free_tab(tab);
+        if (stack_a)
+            ft_free_list(&stack_a);
     }
     else
         printf("%s", "Error\n");
