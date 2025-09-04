@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:20:05 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/20 19:19:41 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/04 18:03:28 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,10 @@ void	ft_swap_a(t_list **stack_a);
 void	ft_swap_b(t_list **stack_b);
 void	ft_swap_ss(t_list **stack_a,t_list **stack_b);
 void	ft_push_a(t_list **stack_a, t_list **stack_b);
+void	ft_push_b(t_list **stack_a, t_list **stack_b);
+void	ft_rotate_a(t_list **stack_a);
+void	ft_rotate_b(t_list **stack_b);
+void	ft_rotate_rr(t_list **stack_a, t_list **stack_b);
+
 
 #endif

@@ -6,7 +6,7 @@
 #    By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 20:02:57 by ouamarko          #+#    #+#              #
-#    Updated: 2025/08/20 10:57:49 by ouamarko         ###   ########.fr        #
+#    Updated: 2025/09/04 18:02:01 by ouamarko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= push_swap
@@ -28,6 +28,12 @@ SRC	= push_swap.c \
 	  command/ft_swap_a.c \
 	  command/ft_swap_b.c \
 	  command/ft_swap_ss.c \
+	  command/ft_push_a.c \
+	  command/ft_push_b.c \
+	  command/ft_rotate_a.c \
+	  command/ft_rotate_b.c \
+	  command/ft_rotate_rr.c \
+
 
 
 INCLUDES = includes/push_swap.h

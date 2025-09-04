@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:51:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/20 19:21:30 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/04 17:10:17 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,10 @@ void	more_arguments(int argc, char **argv)
         ft_free_list(&stack_a);;
     }
     else
-	{
+    {
         printf("%s","Error\n");
         ft_free_tab(tab);
-	}
+    }
 }
 
 void	one_argument(char **argv)

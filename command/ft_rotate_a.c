@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_a.c                                        :+:      :+:    :+:   */
+/*   ft_rotate_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/27 10:10:00 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/04 16:39:49 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/09/04 16:45:31 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/09/04 17:45:49 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/push_swap"
 
-void ft_push_a(t_list **stack_a, t_list **stack_b)
+void	ft_rotate_a(t_list **stack_a)
 {
-    t_list *tmp;
+	t_list *first;
+	t_list *last
 
-    if (!stack_b || !*stack_b)
-        return ;
-    tmp = *stack_b;
-    *stack_b = *stack_b->next;
-    tmp->next = *stack_a;
-    *stack_a = tmp;
-    printf("pa\n");
+	first = *stack_a;
+	last = *stack_a;
+	if (!stack_a || !*stack_a || !(*stack_a)->next)
+		return ;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_a = first->next;
+	first->next = NULL;
+	last->next = first;
+	printf("ra\n");
 }
