@@ -6,7 +6,7 @@
 #    By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 20:02:57 by ouamarko          #+#    #+#              #
-#    Updated: 2025/09/04 18:02:01 by ouamarko         ###   ########.fr        #
+#    Updated: 2025/09/14 16:39:20 by ouamarko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= push_swap
@@ -25,6 +25,8 @@ SRC	= push_swap.c \
 	  utils/ft_strdup.c \
 	  utils/ft_free_tab.c \
 	  utils/ft_free_list.c \
+	  utils/ft_sort_tab.c \
+	  utils/ft_list_size.c \
 	  command/ft_swap_a.c \
 	  command/ft_swap_b.c \
 	  command/ft_swap_ss.c \
@@ -33,6 +35,7 @@ SRC	= push_swap.c \
 	  command/ft_rotate_a.c \
 	  command/ft_rotate_b.c \
 	  command/ft_rotate_rr.c \
+	  algo/ft_algorithm.c \
 
 
 

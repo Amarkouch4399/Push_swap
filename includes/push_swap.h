@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:20:05 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/04 18:03:28 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/14 16:47:13 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	ft_free_tab(char **s);
 void	ft_free_list(t_list **head);
 char	**ft_copy_argv(int argc, char **argv);
 char	*ft_strdup(const char *src);
-void	more_arguments(int argc, char **argv);
-void	one_arguments(char **argv);
+t_list	*more_arguments(int argc, char **argv);
+t_list	*one_arguments(char **argv);
 void	ft_swap_a(t_list **stack_a);
 void	ft_swap_b(t_list **stack_b);
 void	ft_swap_ss(t_list **stack_a,t_list **stack_b);
@@ -56,6 +56,9 @@ void	ft_push_b(t_list **stack_a, t_list **stack_b);
 void	ft_rotate_a(t_list **stack_a);
 void	ft_rotate_b(t_list **stack_b);
 void	ft_rotate_rr(t_list **stack_a, t_list **stack_b);
-
+void	ft_algorithm(t_list *stack_a);
+int	*ft_sorted(t_list *stack_a);
+int	*ft_sort_tab(int *tab);
+int	ft_list_size(t_list *lst);
 
 #endif

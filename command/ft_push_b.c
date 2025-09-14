@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 16:37:37 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/04 16:44:13 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/14 13:06:43 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_push_b(t_list **stack_a, t_list **stack_b)
 	if (!stack_a || !*stack_a)
 		return ;
 	tmp = *stack_a;
-	*stack_a = *stack_a->next;
+	*stack_a = (*stack_a)->next;
 	tmp->next = *stack_b;
 	*stack_b = tmp;
 	printf("pb\n");

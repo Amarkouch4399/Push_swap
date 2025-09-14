@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotate_a.c                                      :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 16:45:31 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/14 13:07:40 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/09/14 14:56:03 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/09/14 16:41:03 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_rotate_a(t_list **stack_a)
+int ft_list_size(t_list *lst)
 {
-	t_list *first;
-	t_list *last;
+    int     i;
+    t_list *tmp;
 
-	first = *stack_a;
-	last = *stack_a;
-	if (!stack_a || !*stack_a || !(*stack_a)->next)
-		return ;
-	while (last->next != NULL)
-		last = last->next;
-	*stack_a = first->next;
-	first->next = NULL;
-	last->next = first;
-	printf("ra\n");
+    i = 0;
+    tmp = lst;
+    while (tmp)
+    {
+        i++;
+        tmp = tmp->next;
+    }
+    return (i);
 }
