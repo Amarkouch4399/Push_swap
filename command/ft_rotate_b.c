@@ -6,16 +6,16 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 17:46:10 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/14 13:08:09 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/04 17:46:51 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/push_swap"
 
 void	ft_rotate_b(t_list **stack_b)
 {
 	t_list *first;
-	t_list *last;
+	t_list *last
 
 	first = *stack_b;
 	last = *stack_b;
