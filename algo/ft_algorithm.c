@@ -38,6 +38,33 @@ int	*ft_sorted(t_list *stack_a)
 	ft_sort_tab(tab);
 	return (tab);
 }
+void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size)
+{
+	ft_assign_index(stack_a, &tab, size);
+
+}
+void	ft_assign_index(t_list *stack_a, int *tab, int size)
+{
+	int	i;
+	t_list tmp;
+
+	tmp = stack;
+	while (tmp)
+	{
+		i = 0;
+		while (i < size)
+		{
+			if (tmp->content == tab[i])
+			{
+				tmp->index = i;
+				break ;
+			}
+			i++;
+		}
+		tmp = tmp->next;
+	}
+
+}
 
 void	ft_algorithm(t_list *stack_a)
 {
@@ -68,5 +95,7 @@ void	ft_algorithm(t_list *stack_a)
 		ft_sort_four(&stack_a);
 	if (size == 5)
 		ft_sort_five(&stack_a, &stack_b);
+	else if (size > 5)
+		ft_radix(&stack_a, &stack_b, tab, size);
 	free(tab);
 }
