@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_b.c                                        :+:      :+:    :+:   */
+/*   ft_sort_five.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/27 10:00:00 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/16 15:06:01 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/09/24 19:49:53 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/09/24 19:50:54 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void ft_swap_b(t_list **stack_b)
-{    
-    t_list	*first;
-    t_list	*second;
-    long	tmp;
+void	ft_sort_five(t_list **stack_a, t_list **stack_b)
+{
+	t_list *min;
 
-    if (!stack_b || !*stack_b || !(*stack_b)->next)
-        return ;
-    first = *stack_b;
-    second = first->next;
-    tmp = first->content;
-    first->content = second->content;
-    second->content = tmp;
-    write(1, "sb\n", 3);
+	while (ft_list_size(*stack_a) > 3)
+	{
+		min = ft_find_min(*stack_a);
+		while (*stack_a != min)
+			ft_rotate_a(stack_a);
+		ft_push_b(stack_a, stack_b);
+	}
+	ft_sort_three(stack_a);
+	while (*stack_b)
+		ft_push_a(stack_a, stack_b);
+	t_list *tmp = *stack_a;
+
+	printf("Stack trier : ");
+	while (tmp)
+	{
+		printf("%ld", tmp->content);
+		tmp = tmp->next;
+	}
+	printf("\n");
 }

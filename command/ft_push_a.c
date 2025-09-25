@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 10:10:00 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/04 16:39:49 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/16 15:03:04 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void ft_push_a(t_list **stack_a, t_list **stack_b)
     *stack_b = tmp->next;
     tmp->next = *stack_a;
     *stack_a = tmp;
-    printf("pa\n");
+    write(1, "pa\n", 3);
 }

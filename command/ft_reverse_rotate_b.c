@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 18:15:00 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/09 18:15:00 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/16 15:04:09 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_reverse_rotate_b(t_list **stack_b)
 {
     t_list	*last;
     t_list	*prev;
-    t_list	*first;
 
     last = *stack_b;
     prev = NULL;
@@ -26,10 +25,9 @@ void	ft_reverse_rotate_b(t_list **stack_b)
     {
         prev = last;
         last = last->next;
-    }
-    first = *stack_b;
+    }    
     prev->next = NULL;
-    last->next = first;
+    last->next = *stack_b;
     *stack_b = last;
-    printf("rrb\n");
+    write(1, "rrb\n", 4);
 }

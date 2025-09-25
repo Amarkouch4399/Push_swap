@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:20:05 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/14 16:47:13 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/21 17:59:51 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,16 @@ void	ft_push_b(t_list **stack_a, t_list **stack_b);
 void	ft_rotate_a(t_list **stack_a);
 void	ft_rotate_b(t_list **stack_b);
 void	ft_rotate_rr(t_list **stack_a, t_list **stack_b);
+void	ft_reverse_rotate_a(t_list **stack_a);
+void	ft_reverse_rotate_b(t_list **stack_b);
 void	ft_algorithm(t_list *stack_a);
 int	*ft_sorted(t_list *stack_a);
 int	*ft_sort_tab(int *tab);
 int	ft_list_size(t_list *lst);
+void	ft_sort_three(t_list **stack_a);
+void	ft_sort_two(t_list **stack_a);
+void	ft_sort_four(t_list **stack_a);
+void	ft_sort_five(t_list **stack_a, t_list **stack_b);
+t_list	*ft_find_min(t_list *stack);
 
 #endif

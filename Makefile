@@ -6,7 +6,7 @@
 #    By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 20:02:57 by ouamarko          #+#    #+#              #
-#    Updated: 2025/09/14 16:39:20 by ouamarko         ###   ########.fr        #
+#    Updated: 2025/09/24 19:51:13 by ouamarko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= push_swap
@@ -35,7 +35,14 @@ SRC	= push_swap.c \
 	  command/ft_rotate_a.c \
 	  command/ft_rotate_b.c \
 	  command/ft_rotate_rr.c \
+	  command/ft_reverse_rotate_a.c \
+	  command/ft_reverse_rotate_b.c \
 	  algo/ft_algorithm.c \
+	  algo/ft_find_min.c \
+	  algo/ft_sort_two.c \
+	  algo/ft_sort_three.c \
+	  algo/ft_sort_four.c \
+	  algo/ft_sort_five.c \
 
 
 

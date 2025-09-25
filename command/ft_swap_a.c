@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:53:54 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/20 17:59:39 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/16 15:05:45 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void ft_swap_a(t_list **stack_a)
     tmp = first->content;
     first->content = second->content;
     second->content = tmp;
-    printf("sa\n");
+    write(1, "sa\n", 3);
 }
