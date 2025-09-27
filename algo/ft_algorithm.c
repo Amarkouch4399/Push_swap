@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 14:41:51 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/24 19:54:52 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/26 20:36:29 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,16 @@ int	*ft_sorted(t_list *stack_a)
 }
 void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size)
 {
-	ft_assign_index(stack_a, &tab, size);
+	stack_b = NULL;
+	ft_assign_index(*stack_a, tab, size);
 
 }
 void	ft_assign_index(t_list *stack_a, int *tab, int size)
 {
 	int	i;
-	t_list tmp;
+	t_list *tmp;
 
-	tmp = stack;
+	tmp = stack_a;
 	while (tmp)
 	{
 		i = 0;
