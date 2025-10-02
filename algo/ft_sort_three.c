@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:28:18 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/16 14:28:53 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:13:57 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_sort_three(t_list **stack_a)
 	top = (*stack_a)->content;
 	mid = (*stack_a)->next->content;
 	bot = (*stack_a)->next->next->content;
-
 	if (top > mid && top < bot)
 		ft_swap_a(stack_a);
 	else if (top > mid && mid > bot)

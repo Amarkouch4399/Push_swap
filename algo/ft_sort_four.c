@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 15:41:46 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/20 15:42:12 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:13:42 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_sort_four(t_list **stack_a)
 
 	top = (*stack_a)->content;
 	bot = (*stack_a)->next->content;
-
 	if (top < bot)
 		return ;
 	else

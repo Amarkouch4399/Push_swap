@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:20:05 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/21 17:59:51 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/01 15:49:26 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b);
 t_list	*ft_find_min(t_list *stack);
 void	ft_assign_index(t_list *stack_a, int *tab, int size);
 void	ft_radix(t_list **stack_a, t_list **stack, int *tab, int size);
+long	ft_get_max(int *tab, int size);
 
 #endif
