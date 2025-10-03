@@ -41,11 +41,32 @@ int	*ft_sorted(t_list *stack_a)
 
 void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size)
 {
-	stack_b = NULL;
-	while (stack_b)
-	{}
+	int	i;
+	int	j;
+	int	bit_max;
+	int	max;
+	
 	ft_assign_index(*stack_a, tab, size);
-	ft_get_max(tab, size);
+	max = ft_get_max(tab, size);
+	bit_max = 0;
+	i = 0;
+	while ((max >> bit_max) != 0)
+		bit_max++;
+	while (i < bit_max)
+	{
+		j = 0;
+		while (j < size)
+		{
+			if ((((*stack_a)->index >> i) & 1) == 1)
+				ft_push_b(stack_a, stack_b);
+			else
+				ft_rotate_a(stack_a);
+			j++;
+		}
+		while(*stack_b)
+			ft_push_a(stack_a, stack_b);
+		i++;
+	}
 }
 
 long	ft_get_max(int *tab, int size)
@@ -108,14 +129,19 @@ void	ft_algorithm(t_list *stack_a)
 		i++;
 	}
 	if (size == 2)
-		ft_sort_two(&stack_a);
+		ft_sort_two(stack_a);
 	if (size == 3)
-		ft_sort_three(&stack_a);
+		ft_sort_three(stack_a);
 	if (size == 4)
-		ft_sort_four(&stack_a);
+		ft_sort_four(stack_a);
 	if (size == 5)
-		ft_sort_five(&stack_a, &stack_b);
+		ft_sort_five(stack_a, stack_b);
 	else if (size > 5)
 		ft_radix(&stack_a, &stack_b, tab, size);
+	    while (stack_a)
+    {
+        printf("content: %ld, index: %d\n", stack_a->content, stack_a->index);
+        stack_a = stack_a->next;
+    }
 	free(tab);
 }

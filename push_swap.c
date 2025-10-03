@@ -46,7 +46,7 @@ t_list  *ft_create_list(int argc, char **argv)
             	start = node;
 	    else
             	ft_lstadd_back(&start, node);
-	    printf("%ld\n", node->content);
+	    //printf("%ld\n", node->content);
 	    i++;
     }
     return (start);
@@ -107,6 +107,6 @@ int	main(int argc, char **argv)
 	else if (argc > 2)
 		stack_a = more_arguments(argc, argv);
 	if (stack_a)
-		ft_algorithm(stack_a);
+		ft_algorithm(&stack_a);
 	ft_free_list(&stack_a);
 }
