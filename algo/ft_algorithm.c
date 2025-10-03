@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 14:41:51 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/01 15:51:14 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/03 18:11:03 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size)
 	max = ft_get_max(tab, size);
 	bit_max = 0;
 	i = 0;
+	if (!stack_a || !*stack_a)
+		return;
 	while ((max >> bit_max) != 0)
 		bit_max++;
 	while (i < bit_max)
@@ -82,9 +84,10 @@ long	ft_get_max(int *tab, int size)
 			max = tab[i];
 		i++;
 	}
-	printf("max content :%ld\n", max);
+	//printf("max content :%ld\n", max);
 	return (max);
 }
+
 void	ft_assign_index(t_list *stack_a, int *tab, int size)
 {
 	int	i;
@@ -107,27 +110,27 @@ void	ft_assign_index(t_list *stack_a, int *tab, int size)
 	}
 }
 
-void	ft_algorithm(t_list *stack_a)
+void	ft_algorithm(t_list **stack_a)
 {
 	int	*tab;
-	int	i;
 	int	size;
-	t_list	*stack_b;
+	t_list	**stack_b;
+	t_list *temp_b;
 
-	i = 0;
-	stack_b = NULL;
+	temp_b = NULL;
+	stack_b = &temp_b;
 	if (!stack_a)
 		return ;
-	tab = ft_sorted(stack_a);
+	tab = ft_sorted(*stack_a);
 	if (!tab)
 		return ;
-	size = ft_list_size(stack_a);
-	printf("tableau trier :\n");
+	size = ft_list_size(*stack_a);
+	/*printf("tableau trier :\n");
 	while (i < size)
 	{
 		printf("%d\n", tab[i]);
 		i++;
-	}
+	}*/
 	if (size == 2)
 		ft_sort_two(stack_a);
 	if (size == 3)
@@ -137,11 +140,12 @@ void	ft_algorithm(t_list *stack_a)
 	if (size == 5)
 		ft_sort_five(stack_a, stack_b);
 	else if (size > 5)
-		ft_radix(&stack_a, &stack_b, tab, size);
-	    while (stack_a)
-    {
-        printf("content: %ld, index: %d\n", stack_a->content, stack_a->index);
-        stack_a = stack_a->next;
-    }
+		ft_radix(stack_a, stack_b, tab, size);
+	/*t_list *current = *stack_a;
+	while (current)
+	{
+		printf("content: %ld, index: %d\n", current->content, current->index);
+		current = current->next;
+	}*/
 	free(tab);
 }
