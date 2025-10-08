@@ -59,7 +59,7 @@ void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size)
 		j = 0;
 		while (j < size)
 		{
-			if ((((*stack_a)->index >> i) & 1) == 1)
+			if ((((*stack_a)->index >> i) & 1) == 0)
 				ft_push_b(stack_a, stack_b);
 			else
 				ft_rotate_a(stack_a);
@@ -114,11 +114,9 @@ void	ft_algorithm(t_list **stack_a)
 {
 	int	*tab;
 	int	size;
-	t_list	**stack_b;
-	t_list *temp_b;
+	t_list	*stack_b;
 
-	temp_b = NULL;
-	stack_b = &temp_b;
+	stack_b = NULL;
 	if (!stack_a)
 		return ;
 	tab = ft_sorted(*stack_a);
@@ -133,14 +131,14 @@ void	ft_algorithm(t_list **stack_a)
 	}*/
 	if (size == 2)
 		ft_sort_two(stack_a);
-	if (size == 3)
+	else if (size == 3)
 		ft_sort_three(stack_a);
-	if (size == 4)
+	else if (size == 4)
 		ft_sort_four(stack_a);
-	if (size == 5)
-		ft_sort_five(stack_a, stack_b);
+	else if (size == 5)
+		ft_sort_five(stack_a, &stack_b);
 	else if (size > 5)
-		ft_radix(stack_a, stack_b, tab, size);
+		ft_radix(stack_a, &stack_b, tab, size);
 	/*t_list *current = *stack_a;
 	while (current)
 	{
