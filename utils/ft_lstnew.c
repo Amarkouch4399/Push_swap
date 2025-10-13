@@ -6,13 +6,13 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 16:32:25 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/07/23 16:42:35 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/13 18:43:35 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_list	*ft_lstnew(int	content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*node;
 

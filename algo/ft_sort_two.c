@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 15:41:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/03 12:43:20 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/13 18:13:44 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_sort_two(t_list **stack_a)
 		return ;
 	else
 		ft_swap_a(stack_a);
-
 	/*t_list *tmp = *stack_a;
 
 	printf("Stack trier : ");
@@ -33,6 +32,4 @@ void	ft_sort_two(t_list **stack_a)
 		printf("%ld", tmp->content);
 		tmp = tmp->next;
 	}*/
-	printf("\n");
-
 }

@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 17:49:39 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/21 17:53:06 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/13 18:59:19 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 t_list	*ft_find_min(t_list *stack)
 {
-    t_list *min;
+	t_list	*min;
 
-    if (!stack)
-        return (NULL);
-
-    min = stack;
-    while (stack)
-    {
-        if (stack->content < min->content)
-            min = stack;
-        stack = stack->next;
-    }
-    return (min);
+	if (!stack)
+		return (NULL);
+	min = stack;
+	while (stack)
+	{
+		if (stack->content < min->content)
+			min = stack;
+		stack = stack->next;
+	}
+	return (min);
 }

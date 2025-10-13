@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:28:18 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/03 16:32:58 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/13 18:58:10 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ void	ft_sort_three(t_list **stack_a)
 	}
 	else if (top < mid && (mid > bot && top > bot))
 		ft_reverse_rotate_a(stack_a);
-	    
-	/*t_list *tmp = *stack_a;
+	/*
+	t_list *tmp = *stack_a;
 
 	printf("Stack trier : ");
 	while (tmp)
 	{
 		printf("%ld", tmp->content);
 		tmp = tmp->next;
-	}*/
+	}
+	*/
 }

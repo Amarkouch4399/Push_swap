@@ -6,19 +6,18 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 14:41:51 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/03 18:11:03 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/13 18:53:38 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "../includes/push_swap.h"
 
 int	*ft_sorted(t_list *stack_a)
-{	
-	t_list		*tmp;
-	int	*tab;
-	int	i;
-	int	size;
-	
+{
+	t_list	*tmp;
+	int		*tab;
+	int		i;
+	int		size;
+
 	if (!stack_a)
 		return (NULL);
 	size = ft_list_size(stack_a);
@@ -45,13 +44,13 @@ void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size)
 	int	j;
 	int	bit_max;
 	int	max;
-	
+
 	ft_assign_index(*stack_a, tab, size);
 	max = ft_get_max(tab, size);
 	bit_max = 0;
 	i = 0;
 	if (!stack_a || !*stack_a)
-		return;
+		return ;
 	while ((max >> bit_max) != 0)
 		bit_max++;
 	while (i < bit_max)
@@ -65,7 +64,7 @@ void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size)
 				ft_rotate_a(stack_a);
 			j++;
 		}
-		while(*stack_b)
+		while (*stack_b)
 			ft_push_a(stack_a, stack_b);
 		i++;
 	}
@@ -74,7 +73,7 @@ void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size)
 long	ft_get_max(int *tab, int size)
 {
 	long	max;
-	int	i;
+	int		i;
 
 	i = 0;
 	max = LONG_MIN;
@@ -84,14 +83,13 @@ long	ft_get_max(int *tab, int size)
 			max = tab[i];
 		i++;
 	}
-	//printf("max content :%ld\n", max);
 	return (max);
 }
 
 void	ft_assign_index(t_list *stack_a, int *tab, int size)
 {
-	int	i;
-	t_list *tmp;
+	int		i;
+	t_list	*tmp;
 
 	tmp = stack_a;
 	while (tmp)
@@ -112,8 +110,8 @@ void	ft_assign_index(t_list *stack_a, int *tab, int size)
 
 void	ft_algorithm(t_list **stack_a)
 {
-	int	*tab;
-	int	size;
+	int		*tab;
+	int		size;
 	t_list	*stack_b;
 
 	stack_b = NULL;
@@ -123,27 +121,15 @@ void	ft_algorithm(t_list **stack_a)
 	if (!tab)
 		return ;
 	size = ft_list_size(*stack_a);
-	/*printf("tableau trier :\n");
-	while (i < size)
-	{
-		printf("%d\n", tab[i]);
-		i++;
-	}*/
 	if (size == 2)
 		ft_sort_two(stack_a);
 	else if (size == 3)
 		ft_sort_three(stack_a);
 	else if (size == 4)
-		ft_sort_four(stack_a);
+		ft_sort_four(stack_a, tab, size);
 	else if (size == 5)
 		ft_sort_five(stack_a, &stack_b);
 	else if (size > 5)
 		ft_radix(stack_a, &stack_b, tab, size);
-	/*t_list *current = *stack_a;
-	while (current)
-	{
-		printf("content: %ld, index: %d\n", current->content, current->index);
-		current = current->next;
-	}*/
 	free(tab);
 }

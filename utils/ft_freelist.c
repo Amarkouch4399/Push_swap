@@ -6,24 +6,25 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 15:32:22 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/11 15:42:38 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/13 18:47:58 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_freelist(t_list **lst)
+void	ft_free_list(t_list **head)
 {
-	if (lst->next)
+	t_list	*tmp;
+	t_list	*current;
+
+	if (!head || !*head)
+		return ;
+	current = *head;
+	while (current)
 	{
-		while(lst->next)
-		{
-			free(lst->content);
-			lst = lst->next;
-		}
+		tmp = current->next;
+		free(current);
+		current = tmp;
 	}
-	else
-		return (0);
-
-
+	*head = NULL;
 }
