@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 15:41:46 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/13 18:08:37 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/15 19:15:53 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,4 @@ void	ft_sort_four(t_list **stack_a, int *tab, int size)
 	ft_push_b(stack_a, stack_b);
 	ft_sort_three(stack_a);
 	ft_push_a(stack_a, stack_b);
-	/*t_list *tmp = *stack_a;
-
-	printf("Stack trier : ");
-	while (tmp)
-	{
-		printf("%ld", tmp->content);
-		tmp = tmp->next;
-	}*/
 }

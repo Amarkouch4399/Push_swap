@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 17:38:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/13 18:44:28 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:51:04 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	t_list	*last;
 
 	if (!lst || !new)
-		return;
+		return ;
 	if (!*lst)
 	{
 		*lst = new;
-		return;
+		return ;
 	}
 	last = *lst;
 	while (last->next)

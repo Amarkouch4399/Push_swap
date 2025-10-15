@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 19:49:53 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/03 16:33:25 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/15 19:16:49 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 {
-	t_list *min;
+	t_list	*min;
 
 	while (ft_list_size(*stack_a) > 3)
 	{
@@ -26,12 +26,4 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 	ft_sort_three(stack_a);
 	while (*stack_b)
 		ft_push_a(stack_a, stack_b);
-	/*t_list *tmp = *stack_a;
-
-	printf("Stack trier : ");
-	while (tmp)
-	{
-		printf("%ld", tmp->content);
-		tmp = tmp->next;
-	}*/
 }

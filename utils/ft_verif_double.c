@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 15:43:06 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/17 18:27:24 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:49:27 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_verif_double(t_list *current, int val)
 	t_list	*tmp;
 
 	tmp = current;
-
 	if (!current)
 		return (0);
 	while (tmp)

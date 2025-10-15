@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:10:19 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/12 15:16:27 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:47:59 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	ft_free_tab(char **s)
 {
-    int	i;
+	int	i;
 
-    if (!s)
-        return;
-    i = 0;
-    while (s[i])
-    {
-        free(s[i]);
-        i++;
-    }
-    free(s);
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
 }

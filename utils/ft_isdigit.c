@@ -6,13 +6,13 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 19:03:37 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/11 16:03:29 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/15 19:09:53 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_isdigit(char	s)
+int	ft_isdigit(char s)
 {
 	if ((s >= '0' && s <= '9') || (s == '-' || s == '+'))
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 17:46:10 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/13 18:56:22 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/15 19:12:12 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ void	ft_rotate_b(t_list **stack_b)
 	last->next = first;
 	write(1, "rb\n", 3);
 }
-

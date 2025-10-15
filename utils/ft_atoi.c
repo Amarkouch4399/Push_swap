@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 16:46:56 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/08/20 19:03:24 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:49:54 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ long	ft_atoi(char *nptr)
 {
 	int				i;
 	int				sign;
-	long long	nb;
+	long long		nb;
 
 	i = 0;
 	nb = 0;

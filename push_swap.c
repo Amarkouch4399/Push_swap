@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:51:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/13 18:39:51 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/15 19:36:30 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,14 @@ t_list	*ft_create_list(int argc, char **argv)
 	while (i < argc)
 	{
 		val = ft_atoi(argv[i]);
-		if (val > INT_MAX || val < INT_MIN)
+		if ((val > INT_MAX || val < INT_MIN) || ft_verif_double(start, val))
 		{
 			write(2, "Error\n", 6);
-			ft_free_list(&start);
-			return (NULL);
-		}
-		if (ft_verif_double(start, val))
-		{
-			write(2, "Error\n", 6);
-			ft_free_list(&start);
-			return (NULL);
+			return (ft_free_list(&start), NULL);
 		}
 		node = ft_lstnew(val);
 		if (!node)
-		{
-			ft_free_list(&start);
-			return (NULL);
-		}
+			return (ft_free_list(&start), NULL);
 		if (!start)
 			start = node;
 		else

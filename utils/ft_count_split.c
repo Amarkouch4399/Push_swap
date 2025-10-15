@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 18:52:46 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/07/28 18:58:43 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:50:34 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	ft_count_split(char **tab)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (tab[i])
 		i++;
 	return (i);

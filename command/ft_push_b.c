@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 16:37:37 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/09/16 15:03:25 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/15 19:11:49 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_push_b(t_list **stack_a, t_list **stack_b)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!stack_a || !*stack_a)
 		return ;
