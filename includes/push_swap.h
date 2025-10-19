@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:20:05 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/13 18:41:34 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/19 15:32:56 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_reverse_rotate_a(t_list **stack_a);
 void	ft_reverse_rotate_b(t_list **stack_b);
 void	ft_algorithm(t_list **stack_a);
 int		*ft_sorted(t_list *stack_a);
-int		*ft_sort_tab(int *tab);
+int		*ft_sort_tab(int *tab, int size);
 int		ft_list_size(t_list *lst);
 void	ft_sort_three(t_list **stack_a);
 void	ft_sort_two(t_list **stack_a);
@@ -70,5 +70,6 @@ t_list	*ft_find_min(t_list *stack);
 void	ft_assign_index(t_list *stack_a, int *tab, int size);
 void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size);
 long	ft_get_max(int *tab, int size);
+void	ft_process_bit(t_list **stack_a, t_list **stack_b, int i, int size);
 
 #endif

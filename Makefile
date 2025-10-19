@@ -6,7 +6,7 @@
 #    By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 20:02:57 by ouamarko          #+#    #+#              #
-#    Updated: 2025/09/24 19:51:13 by ouamarko         ###   ########.fr        #
+#    Updated: 2025/10/19 15:16:52 by ouamarko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= push_swap
@@ -43,7 +43,7 @@ SRC	= push_swap.c \
 	  algo/ft_sort_three.c \
 	  algo/ft_sort_four.c \
 	  algo/ft_sort_five.c \
-
+	  algo/ft_get_max.c \
 
 
 INCLUDES = includes/push_swap.h

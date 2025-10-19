@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 14:41:51 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/13 18:53:38 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/19 15:32:44 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
@@ -34,56 +34,42 @@ int	*ft_sorted(t_list *stack_a)
 		tmp = tmp->next;
 		i++;
 	}
-	ft_sort_tab(tab);
+	ft_sort_tab(tab, size);
 	return (tab);
 }
 
 void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size)
 {
 	int	i;
-	int	j;
 	int	bit_max;
 	int	max;
 
 	ft_assign_index(*stack_a, tab, size);
 	max = ft_get_max(tab, size);
 	bit_max = 0;
-	i = 0;
+	i = -1;
 	if (!stack_a || !*stack_a)
 		return ;
 	while ((max >> bit_max) != 0)
 		bit_max++;
-	while (i < bit_max)
-	{
-		j = 0;
-		while (j < size)
-		{
-			if ((((*stack_a)->index >> i) & 1) == 0)
-				ft_push_b(stack_a, stack_b);
-			else
-				ft_rotate_a(stack_a);
-			j++;
-		}
-		while (*stack_b)
-			ft_push_a(stack_a, stack_b);
-		i++;
-	}
+	while (++i < bit_max)
+		ft_process_bit(stack_a, stack_b, i, size);
 }
 
-long	ft_get_max(int *tab, int size)
+void	ft_process_bit(t_list **stack_a, t_list **stack_b, int i, int size)
 {
-	long	max;
-	int		i;
+	int	j;
 
-	i = 0;
-	max = LONG_MIN;
-	while (i < size)
+	j = -1;
+	while (++j < size)
 	{
-		if (tab[i] > max)
-			max = tab[i];
-		i++;
+		if ((((*stack_a)->index >> i) & 1) == 0)
+			ft_push_b(stack_a, stack_b);
+		else
+			ft_rotate_a(stack_a);
 	}
-	return (max);
+	while (*stack_b)
+		ft_push_a(stack_a, stack_b);
 }
 
 void	ft_assign_index(t_list *stack_a, int *tab, int size)

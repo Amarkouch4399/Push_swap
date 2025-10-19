@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_tab.c                                      :+:      :+:    :+:   */
+/*   ft_get_max.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/14 15:07:37 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/19 15:32:19 by ouamarko         ###   ########.fr       */
+/*   Created: 2025/10/19 15:15:11 by ouamarko          #+#    #+#             */
+/*   Updated: 2025/10/19 15:16:00 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	*ft_sort_tab(int *tab, int size)
+long	ft_get_max(int *tab, int size)
 {
-	int	i;
-	int	tmp;
-	int	j;
+	long	max;
+	int		i;
 
 	i = 0;
-	while (i < size - 1)
+	max = LONG_MIN;
+	while (i < size)
 	{
-		j = 0;
-		while (j < size - i - 1)
-		{
-			if (tab[j] > tab[j + 1])
-			{
-				tmp = tab[j];
-				tab[j] = tab[j + 1];
-				tab[j + 1] = tmp;
-			}
-			j++;
-		}
+		if (tab[i] > max)
+			max = tab[i];
 		i++;
 	}
-	return (tab);
+	return (max);
 }
