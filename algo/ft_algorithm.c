@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 14:41:51 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/27 17:15:26 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/10/27 17:38:47 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
@@ -102,8 +102,8 @@ void	ft_algorithm(t_list **stack_a)
 
 	stack_b = NULL;
 	if (!stack_a)
-		return ;	
-	size = ft_list_size(*stack_a);	
+		return ;
+	size = ft_list_size(*stack_a);
 	if (ft_is_sorted(*stack_a))
 		return ;
 	tab = ft_sorted(*stack_a);
