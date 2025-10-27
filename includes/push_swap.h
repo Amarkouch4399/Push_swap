@@ -71,6 +71,6 @@ void	ft_assign_index(t_list *stack_a, int *tab, int size);
 void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size);
 long	ft_get_max(int *tab, int size);
 void	ft_process_bit(t_list **stack_a, t_list **stack_b, int i, int size);
-int		ft_is_sorted(int *tab, int size);
+int		ft_is_sorted(t_list *stack);
 
 #endif

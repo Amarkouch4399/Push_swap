@@ -12,18 +12,18 @@
 
 #include "../includes/push_swap.h"
 
-int	ft_is_sorted(int *tab, int size)
+int	ft_is_sorted(t_list *stack)
 {
-	int	i;
+    int	val;
 
-	i = 0;
-	if (!tab || size <= 1)
-		return (1);
-	while(i < size - 1)
-	{
-		if (tab[i] > tab[i + 1])
-			return (0);
-		i++;
-	}
-	return (1);
+    if (!stack)
+        return (1);
+    while (stack->next)
+    {
+        val = (int)stack->content;
+        if (val > (int)stack->next->content)
+            return (0);
+        stack = stack->next;
+    }
+    return (1);
 }

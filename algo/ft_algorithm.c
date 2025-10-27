@@ -102,16 +102,13 @@ void	ft_algorithm(t_list **stack_a)
 
 	stack_b = NULL;
 	if (!stack_a)
+		return ;	
+	size = ft_list_size(*stack_a);	
+	if (ft_is_sorted(*stack_a))
 		return ;
 	tab = ft_sorted(*stack_a);
 	if (!tab)
 		return ;
-	size = ft_list_size(*stack_a);
-	if (ft_is_sorted(tab, size) == 1)
-	{
-		free(tab);
-		return ;
-	}
 	if (size == 2)
 		ft_sort_two(stack_a);
 	else if (size == 3)
