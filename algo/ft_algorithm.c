@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 14:41:51 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/27 17:38:47 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/11/01 17:30:31 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
@@ -44,29 +44,42 @@ void	ft_radix(t_list **stack_a, t_list **stack_b, int *tab, int size)
 	int	bit_max;
 	int	max;
 
-	ft_assign_index(*stack_a, tab, size);
-	max = ft_get_max(tab, size);
-	bit_max = 0;
-	i = -1;
 	if (!stack_a || !*stack_a)
 		return ;
+	ft_assign_index(*stack_a, tab, size);
+	max = size - 1;
+	bit_max = 0;
+	i = 0;
 	while ((max >> bit_max) != 0)
 		bit_max++;
-	while (++i < bit_max)
-		ft_process_bit(stack_a, stack_b, i, size);
+	while (i < bit_max)
+	{
+		ft_process_bit(stack_a, stack_b, i);
+		i++;
+	}
 }
 
-void	ft_process_bit(t_list **stack_a, t_list **stack_b, int i, int size)
+void	ft_process_bit(t_list **stack_a, t_list **stack_b, int i)
 {
 	int	j;
+	int	current_size;
 
-	j = -1;
-	while (++j < size)
+	if (!stack_a || !*stack_a)
+		return ;
+	current_size = ft_list_size(*stack_a);
+	j = 0;
+	while (j < current_size)
 	{
 		if ((((*stack_a)->index >> i) & 1) == 0)
+		{
 			ft_push_b(stack_a, stack_b);
+			j++;
+		}
 		else
+		{
 			ft_rotate_a(stack_a);
+			j++;
+		}
 	}
 	while (*stack_b)
 		ft_push_a(stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: ouamarko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 15:15:11 by ouamarko          #+#    #+#             */
-/*   Updated: 2025/10/19 15:16:00 by ouamarko         ###   ########.fr       */
+/*   Updated: 2025/11/01 16:34:57 by ouamarko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ long	ft_get_max(int *tab, int size)
 			max = tab[i];
 		i++;
 	}
-	return (max);
+	return (max - 1);
 }
